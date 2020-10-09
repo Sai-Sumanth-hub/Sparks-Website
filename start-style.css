@@ -182,18 +182,6 @@ input:focus {
     cursor: pointer;
 }
 
-
-/*.send-container {
-            background-color: #5295E2;
-        }   dbms_mysql_phpMyAdmin7
-        .send-block {
-            background-color: white;
-            box-shadow: 0 0 20px black;
-        }*/
-
-
-
-
 @media screen and (max-width:1000px) {
     .leftcont {
         width: 100%;
