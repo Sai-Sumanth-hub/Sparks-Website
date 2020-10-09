@@ -13,10 +13,6 @@ body {
     overflow-x: hidden;
 }
 
-/*https://newschoolarch.edu/wp-content/uploads/2019/05/ballpen-blur-close-up-461077-1.jpg
-https://directlinedev.com/media/cases/woodwell/header/background_1.wide.jpeg
-*/
-
 .icontainer,.container {
     height: 47vw;       
     background-color:  black;
@@ -39,14 +35,6 @@ https://directlinedev.com/media/cases/woodwell/header/background_1.wide.jpeg
     z-index: 1;
     background-color: transparent;
 }
-
-/*.container > h1 {
-    font-size: 3.2vw;
-    color: antiquewhite;
-    padding: 1%;
-    text-align: center;
-    opacity: 0.85;
-}*/
 
 .steps {
     color: white;
@@ -77,10 +65,6 @@ https://directlinedev.com/media/cases/woodwell/header/background_1.wide.jpeg
     margin-left: 4%;
     font-weight: bold;
 }
-
-
-
-
 
 .icontainer > img {
     opacity: 0.5;
@@ -154,8 +138,6 @@ button:visited {
     border-bottom: 3px groove white;
     transition: all 0.2s;
 }
-
-
 
 
 @media screen and (max-width:600px) {
