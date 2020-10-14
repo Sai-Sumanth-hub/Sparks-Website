@@ -12,21 +12,85 @@ require_once "connect_db.php";
     <link rel="stylesheet" href="trans-style.css">
 
     <style>
-        .customers {
-            width: 28%;
+        ::-webkit-scrollbar {
+            width: 4px;
         }
+        .customers {
+            width: 100%;
+        }
+        #viewhistory {
+            position: absolute;
+            top: 1%;
+            right: 1%;
+            width: 18vw;
+            height: 3vw;
+            font-size: 1.2vw;
+            cursor: pointer;
+            background-color: rgba(231, 216, 216, 0.03);
+            border: none;
+            color: white;
+            transition: all 0.15s;
+            border-radius: 6px;
+            opacity: 0.8;
+        }
+        #heading {
+            margin-top: 10vh;
+        }
+        #viewhistory:hover {
+            background: rgba(231, 216, 216, 0.13);
+        }
+        .tables-container {
+            width: 80%;
+            padding: 0;
+            margin-left: 10%;
+        }
+        th {
+            border-bottom: 1px solid rgba(250,250,250,0.5);
+            padding-bottom: 1%;
+            color: antiquewhite;
+        }
+        td {
+            padding: 1% 0%;
+        }
+        tr:hover {
+            background-color: rgba(68, 78, 156 ,0.3);
+        }
+        .ttt {
+            padding: 0;
+            border: none;
+        }
+        .customers {
+            padding: 0;
+            margin:0;
+            height: 60vh;
+            overflow-y:scroll ;
+    color: whitesmoke;
+    border-radius: 2px;
+    background-color: rgba(250,250,250,0.2);
+}
     </style>
     
 </head>
 <body>
 
     <a href="home-page.html"><img src="Logo-PixTeller2.png" alt="logo" class="logo"></a>
+    
+    <a href="show-transactions.php"><button id="viewhistory">Show Transaction History</button></a>
 
     <h1 id="heading">
         Customer Details
     </h1>
 
     <div class="tables-container">
+    <div class="customers" style="background:rgba(68, 78, 156 ,0.1)">
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Account Number</th>
+            <th>Name</th>
+            <th>Email Id</th>
+            <th>Account Balance</th>
+        </tr>
         <?php
 
         /* Quering the Database */
@@ -38,37 +102,29 @@ require_once "connect_db.php";
                 $i = 1;
                 while ($data = $result->fetch_assoc()) {
                     
-                    echo '<div class="customers" style="background:rgba(68, 78, 156 ,0.7)">
-                    <table>
+                    echo '
+                   
                         <tr id = "c'.$i.'">
-                            <th colspan="3" class="ttt">Customer '.$i.' </th>
-                        </tr>
-                        <tr>
-                            <td>Account No.</td>
-                            <td>:</td>
+                            <td class="ttt">'.$i.'</td>
+                        
+                            
                             <td>'.$data["acc_number"].'</td>
-                        </tr>
-                        <tr>
-                            <td>Name </td>
-                            <td>:</td>
+                        
+                            
                             <td>'.$data["cust_name"].'</td>
-                        </tr>
-                        <tr>
-                            <td>Email-ID</td>
-                            <td>:</td>
+                        
+                            
                             <td>'.$data["email_id"].'</td>
-                        </tr>
-                        <tr>
-                            <th>Balance</th>
-                            <td>:</td>
-                            <th>'.$data['acc_balance'].'</th>
-                        </tr>
-                    </table>
-                </div>';
+                        
+                            
+                            <td>'.$data['acc_balance'].'</td>
+                        </tr>';
                 $i++;
                 }
             }
         ?>
+        </table>
+        </div>
     </div>
 
     <p class="tbtn"><a href="start-transaction.php"><button>Transfer Money</button></a></p>
